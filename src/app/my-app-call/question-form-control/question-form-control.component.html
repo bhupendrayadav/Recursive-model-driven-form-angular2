@@ -1,0 +1,24 @@
+<div style="border-left: 1px dotted gray;padding-left: 10px;">
+<div class="row" [formGroup]="question">
+  	<div class="col-xs-6">
+  		<span style="font-weight: bold;font-size:20px;color:gray"></span>
+    	<input class="form-control" style="width: 95%;display: inline-block" type="text" [attr.id]="'txt_quest'+index" placeholder="Type your question..." formControlName="txt_quest"><br/>
+    	<span>{{question.value.txt_quest}}</span>
+	</div>
+	<label>
+	    <select name="choice" class="form-control" [attr.id]="'choice'+index" formControlName="choice" (change)="onAddChoice(index)">
+			<option value="0" [selected]="true">-Select Choice-</option>
+			<option value="multi-line-text"> Multi-line Text </option>
+			<option value="single-choice"> Single Choice </option>
+			<option value="multi-choice"> Mutli Choice </option>
+		</select>     
+	</label>
+	&nbsp;<a href="javascript:void(0)" class="link" (click)="onRemoveQuestion(index)" title="Remove"> &times; </a>
+	<div class="clearfix"></div>
+	<div class="col-md-12">
+		<choice-filling 
+			*ngFor="let choices of question.controls['choicedesc'].controls; let i=index" [previousIndex]="index" [index]="i" [choices]="choices">
+		</choice-filling>
+	</div>	
+</div>
+</div>

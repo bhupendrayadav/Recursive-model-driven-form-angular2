@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<br/>
+			<div class="question-container">
+				<form [formGroup]="myForm" (ngSubmit)="submit()">
+					<div class="panel-head">
+						<h3 class="text-info">Add New Call</h3>
+					</div>
+					<div class="panel-body">
+						<questions-array
+							formArrayName="questions"
+							[questionsFormArray]="myForm.get('questions')">
+						</questions-array>
+					</div>
+					<div class="bottom-strip-lg"><a class="btn btn-default pull-right" (click)="addNewQuestion()"> + Add New Question </a></div>
+					<div class="clearfix"></div>
+					<div class="bottom-strip-lg">
+						<input type="submit" class="btn btn-info" value="SAVE"> <a class="btn btn-default"> Cancel </a>
+					</div>
+					
+				</form>
+			</div>
+			<div class="clearfix"></div>			
+			<h6 class="mt-3">Reactive Form (Model-driven approach):-</h6>
+			<div><pre><code>{{ myForm?.value | json}}</code></pre></div>
+		</div>
+	</div>
+
+</div>

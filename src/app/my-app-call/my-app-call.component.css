@@ -1,0 +1,27 @@
+.bottom-strip-lg {
+	height: 50px;
+	padding: 5px;
+	background-color: #DCE1DD;
+	border-bottom: 1px solid gray;
+}
+
+.panel-body {
+	height: 400px;
+	overflow-y: scroll;
+	border-top: 1px solid gray;	
+
+}
+
+.panel-head{
+	padding-left: 15px;
+}
+
+.question-container {
+	border-top: 4px;
+	border-left:2px;
+	border-right:2px;
+	border-bottom:2px;	
+
+	border-color: gray;
+	border-style: solid;	
+} 

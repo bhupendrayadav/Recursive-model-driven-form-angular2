@@ -1,0 +1,6 @@
+<fieldset>
+  <question-control
+    *ngFor="let question of questionsFormArray.controls; let i=index"
+    [index]="i" [question]="question" [questionsFormArray]="questionsFormArray" [previousIndex]="index">
+  </question-control>
+</fieldset>
